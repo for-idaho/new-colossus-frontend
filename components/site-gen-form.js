@@ -1,4 +1,21 @@
 import { Form, Text, TextArea } from "react-form";
+import styled from "styled-components";
+
+// Note: padding used here instead of margin for a11y
+// You can click on padding, but not on margin
+const Label = styled.label`
+  width: 100%;
+  display: inline-block;
+  padding-bottom: 1rem;
+`;
+
+const FormGroup = styled.p`
+  input,
+  textarea {
+    border: 1px solid ${props => props.theme.skyblue.light};
+    width: 100%;
+  }
+`;
 
 class SiteGenForm extends React.Component {
   constructor(props) {
@@ -14,30 +31,38 @@ class SiteGenForm extends React.Component {
   render() {
     return (
       <Form onSubmit={this.onSubmit}>
-        {formApi => <form onSubmit={formApi.submitForm} id="site-gen" >
-        
-        <label htmlFor="boi">Bio</label>
-        <TextArea field="bio" id="bio"/> 
+        {formApi => (
+          <form onSubmit={formApi.submitForm} id="site-gen">
+            <FormGroup>
+              <Label htmlFor="bio">Bio</Label>
+              <TextArea field="bio" id="bio" />
+            </FormGroup>
 
-        <label htmlFor="events">Events Coming Up</label>
-        <TextArea field="events" id="events"/> 
+            <FormGroup>
+              <Label htmlFor="events">Events Coming Up</Label>
+              <TextArea field="events" id="events" />
+            </FormGroup>
 
-        <label htmlFor="issues">Issues</label>
-        <TextArea field="issues" id="issues"/> 
+            <FormGroup>
+              <Label htmlFor="issues">Issues</Label>
+              <TextArea field="issues" id="issues" />
+            </FormGroup>
 
-        <label htmlFor="volunteer">Volunteer Link</label>
-        <Text field="volunteer" id="volunteer"/> 
+            <FormGroup>
+              <Label htmlFor="volunteer">Volunteer Link</Label>
+              <Text field="volunteer" type="url" id="volunteer" />
+            </FormGroup>
 
-        <label htmlFor="donate">Donate Link</label>
-        <Text field="donate" id="donate"/> 
+            <FormGroup>
+              <Label htmlFor="donate">Donate Link</Label>
+              <Text field="donate" type="url" id="donate" />
+            </FormGroup>
 
-        <p>
-        <button type="submit">
-          Submit
-        </button>
-        </p>
-
-        </form>}
+            <FormGroup>
+              <button type="submit">Submit</button>
+            </FormGroup>
+          </form>
+        )}
       </Form>
     );
   }

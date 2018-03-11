@@ -1,0 +1,44 @@
+html {
+  font-size: 62.5%; /* 62.5% sets REM measurements based on 10px; 1.5rem = 15px */
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  color: #282828;
+}
+
+body {
+  font-size: 1.5rem;
+}
+
+html,
+body,
+#__next {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  height: 38px;
+  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+}
