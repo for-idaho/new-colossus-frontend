@@ -33,21 +33,41 @@ const FancyHeaderText = styled.span`
   letter-spacing: 0rem;
 `;
 
-export const FancyHeader = ({children, ...rest}) => (
-    <FancyHeaderWrapper>
-        <FancyHeaderText {...rest}>{children}</FancyHeaderText>
-    </FancyHeaderWrapper>
-)
-
+export const FancyHeader = ({ children, ...rest }) => (
+  <FancyHeaderWrapper>
+    <FancyHeaderText {...rest}>{children}</FancyHeaderText>
+  </FancyHeaderWrapper>
+);
 
 /**
  * Layouts
  */
 
 export const Card = styled.div`
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 20px 0 rgba(0,0,0,0.10);
-    padding: 2rem;
-    border: 1px solid #E3F2FC;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border: 1px solid #e3f2fc;
+`;
+
+/**
+ * Buttons
+ */
+
+export const Button = styled.div`
+  background: ${props => props.theme.skyblue.regular};
+  border-radius: 4px;
+  font-size: 14px;
+  color: #ffffff;
+  border: none;
+  padding: 2rem;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bolder;
+  letter-spacing: 0.1rem;
+
+  &:hover {
+    background: ${props => props.theme.skyblue.light};
+  }
 `;

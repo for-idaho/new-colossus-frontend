@@ -1,5 +1,6 @@
 import { Form, Text, TextArea } from "react-form";
 import styled from "styled-components";
+import { Button } from "./ui";
 
 // Note: padding used here instead of margin for a11y
 // You can click on padding, but not on margin
@@ -96,7 +97,7 @@ class SiteGenForm extends React.Component {
             </FormGroup>
 
             <FormGroup>
-              <button type="submit">Submit</button>
+              <Button type="submit">Launch your site!</Button>
             </FormGroup>
           </form>
         )}
