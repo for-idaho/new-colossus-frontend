@@ -21,6 +21,10 @@ const FormGroup = styled.p`
     border: 1px solid ${props => props.theme.border};
     width: 100%;
     margin-bottom: 2rem;
+
+    &:focus {
+      border: 1px solid ${props => props.theme.blue.light};
+    }
   }
 `;
 

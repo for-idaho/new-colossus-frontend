@@ -47,8 +47,13 @@ export const Card = styled.div`
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  padding: 4rem;
   border: 1px solid #e3f2fc;
+`;
+
+export const Clamp = styled.div`
+  max-width: 600px;
+  margin: 0 auto;
 `;
 
 /**
@@ -59,15 +64,36 @@ export const Button = styled.div`
   background: ${props => props.theme.skyblue.regular};
   border-radius: 4px;
   font-size: 14px;
-  color: #ffffff;
+  color: white;
   border: none;
-  padding: 2rem;
+  padding: 1rem;
   display: inline-block;
   cursor: pointer;
   font-weight: bolder;
   letter-spacing: 0.1rem;
+  transition: all 0.2s ease-out;
+  position: relative;
 
   &:hover {
     background: ${props => props.theme.skyblue.light};
+    color: white;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+    top: -1px;
+    transition: all 0.2s ease-in;
+  }
+`;
+
+export const ButtonLink = Button.withComponent("a").extend`
+  text-decoration: none;
+`;
+
+export const WhiteTextBack = styled.div`
+  background: white;
+  padding: 1rem;
+  display: inline-block;
+  border-radius: 8px;
+
+  * {
+    margin: 0;
   }
 `;
