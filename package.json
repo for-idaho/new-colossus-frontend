@@ -16,5 +16,8 @@
     "react-form": "^3.3.0",
     "styled-components": "^2.1.0"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babel-plugin-inline-react-svg": "^0.5.2"
+  }
 }
