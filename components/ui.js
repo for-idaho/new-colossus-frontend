@@ -60,7 +60,7 @@ export const Clamp = styled.div`
  * Buttons
  */
 
-export const Button = styled.div`
+export const Button = styled.button`
   background: ${props => props.theme.skyblue.regular};
   border-radius: 4px;
   font-size: 14px;
@@ -71,7 +71,7 @@ export const Button = styled.div`
   cursor: pointer;
   font-weight: bolder;
   letter-spacing: 0.1rem;
-  transition: all 0.2s ease-out;
+  transition: all 0.1s ease-in;
   position: relative;
 
   &:hover {
@@ -83,9 +83,17 @@ export const Button = styled.div`
   }
 `;
 
+export const GhostButton = Button.extend`
+  background: none;
+  color: ${props => props.theme.skyblue.regular};
+  text-decoration: underline;
+`;
+
 export const ButtonLink = Button.withComponent("a").extend`
   text-decoration: none;
 `;
+
+export const GhostButtonLink = GhostButton.withComponent("a");
 
 export const WhiteTextBack = styled.div`
   background: white;
@@ -95,5 +103,33 @@ export const WhiteTextBack = styled.div`
 
   * {
     margin: 0;
+  }
+`;
+
+/**
+ * Forms
+ */
+
+export const Label = styled.label`
+  width: 100%;
+  display: inline-block;
+  padding-bottom: 1rem;
+  font-weight: bold;
+`;
+
+export const Sublabel = Label.extend`
+  font-weight: normal;
+`;
+
+export const FormGroup = styled.p`
+  input,
+  textarea {
+    border: 1px solid ${props => props.theme.border};
+    width: 100%;
+    margin-bottom: 2rem;
+
+    &:focus {
+      border: 1px solid ${props => props.theme.blue.light};
+    }
   }
 `;

@@ -23,6 +23,5 @@ export default {
     regular: "#1e272e",
     light: "#485460"
   },
-
   border: "#C6C9F7"
 };

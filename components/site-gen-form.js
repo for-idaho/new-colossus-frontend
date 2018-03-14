@@ -1,32 +1,6 @@
 import { Form, Text, TextArea } from "react-form";
 import styled from "styled-components";
-import { Button } from "./ui";
-
-// Note: padding used here instead of margin for a11y
-// You can click on padding, but not on margin
-const Label = styled.label`
-  width: 100%;
-  display: inline-block;
-  padding-bottom: 1rem;
-  font-weight: bold;
-`;
-
-const Sublabel = Label.extend`
-  font-weight: normal;
-`;
-
-const FormGroup = styled.p`
-  input,
-  textarea {
-    border: 1px solid ${props => props.theme.border};
-    width: 100%;
-    margin-bottom: 2rem;
-
-    &:focus {
-      border: 1px solid ${props => props.theme.blue.light};
-    }
-  }
-`;
+import { Button, Label, Sublabel, FormGroup } from "./ui";
 
 class SiteGenForm extends React.Component {
   constructor(props) {

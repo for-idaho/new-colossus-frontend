@@ -12,64 +12,14 @@ import {
 } from "../components/ui";
 import { ThemeProvider } from "styled-components";
 import theme from "../theme";
-
-const Header = styled.div`
-  margin-bottom: 3rem;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between;
-
-  @media only screen and (max-width: 600px) {
-    flex-direction: column;
-  }
-`;
-
-const FlexEndOnBigScreens = styled.div`
-  align-self: center;
-  justify-self: flex-end;
-
-  @media only screen and (max-width: 600px) {
-    align-self: flex-start;
-  }
-`;
-
-const Menu = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  * {
-    margin-left: 1rem;
-  }
-
-  @media only screen and (max-width: 600px) {
-    * {
-      margin-left: initial;
-      margin-right: 1rem;
-    }
-  }
-`;
+import Header from "../components/header.js";
 
 export default () => (
   <ThemeProvider theme={theme}>
     <Main>
       <Head />
       <Clamp>
-        <Header>
-          <WhiteTextBack>
-            <FancyHeader>New Colossus</FancyHeader>
-          </WhiteTextBack>
-
-          <FlexEndOnBigScreens>
-            <WhiteTextBack>
-              <Menu>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-              </Menu>
-            </WhiteTextBack>
-
-            <ButtonLink href="#">Logout</ButtonLink>
-          </FlexEndOnBigScreens>
-        </Header>
+        <Header />
 
         <Card>
           <FancyHeader>{"Hi!"}</FancyHeader>
