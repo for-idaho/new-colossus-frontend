@@ -13,6 +13,8 @@ import {
 import { ThemeProvider } from "styled-components";
 import theme from "../theme";
 import Header from "../components/header.js";
+import showBanner from "../lib/emma";
+showBanner();
 
 export default () => (
   <ThemeProvider theme={theme}>
