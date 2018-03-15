@@ -29,6 +29,10 @@ class SiteGenForm extends React.Component {
 
             <FormGroup>
               <Label htmlFor="events">Events Coming Up</Label>
+              <Sublabel htmlFor="events">
+                Remember to include a date, time, location and information about
+                each event!
+              </Sublabel>
               <TextArea
                 field="events"
                 id="events"
