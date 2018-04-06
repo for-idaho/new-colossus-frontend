@@ -46,7 +46,7 @@ const Menu = styled.nav`
 export default () => (
   <Header>
     <WhiteTextBack>
-      <FancyHeader>New Colossus</FancyHeader>
+      <FancyHeader href="/">New Colossus</FancyHeader>
     </WhiteTextBack>
 
     <FlexEndOnBigScreens>

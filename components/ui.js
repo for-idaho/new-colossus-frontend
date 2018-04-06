@@ -23,6 +23,15 @@ const FancyHeaderWrapper = styled.h1`
     transform: translateX(-50%);
     opacity: 0.1;
   }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: ${props => props.theme.blue.light};
+    }
+  }
 `;
 
 const FancyHeaderText = styled.span`
@@ -33,9 +42,15 @@ const FancyHeaderText = styled.span`
   letter-spacing: 0rem;
 `;
 
-export const FancyHeader = ({ children, ...rest }) => (
+export const FancyHeader = ({ children, href, ...rest }) => (
   <FancyHeaderWrapper>
-    <FancyHeaderText {...rest}>{children}</FancyHeaderText>
+    {href ? (
+      <a href={href}>
+        <FancyHeaderText {...rest}>{children}</FancyHeaderText>{" "}
+      </a>
+    ) : (
+      <FancyHeaderText {...rest}>{children}</FancyHeaderText>
+    )}
   </FancyHeaderWrapper>
 );
 
