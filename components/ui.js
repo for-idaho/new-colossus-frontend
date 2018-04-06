@@ -121,7 +121,7 @@ export const Sublabel = Label.extend`
   font-weight: normal;
 `;
 
-export const FormGroup = styled.p`
+export const FormGroup = styled.div`
   input,
   textarea {
     border: 1px solid ${props => props.theme.border};
@@ -132,4 +132,8 @@ export const FormGroup = styled.p`
       border: 1px solid ${props => props.theme.blue.light};
     }
   }
+`;
+
+export const ErrorLabel = Label.extend`
+  color: ${props => props.theme.red.regular};
 `;
