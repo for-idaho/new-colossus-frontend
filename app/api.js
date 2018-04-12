@@ -1,26 +1,31 @@
-import "es6-promise";
-import "isomorphic-fetch";
+require("es6-promise");
+require("isomorphic-fetch");
+
+const API_URL = "localhost:5000";
 
 const post = (route, payload, options = {}) => {
   const data = new FormData();
   data.append("json", JSON.stringify(payload));
 
-  return fetch(route, {
+
+  return fetch(API_URL + "/" + route, {
     method: "post",
     body: data,
     ...options
-  }).then(res => res.json());
+  }).then(res =>
+    res.json()
+  );
 };
 
-export const postNewSite = payload => post("/deploy", payload);
+const postNewSite = payload => post("/deploy", payload);
 
-export const login = ({ username, password }) =>
+const login = ({ username, password }) =>
   post("/token/auth", {
     username,
     password
   });
 
-export const register = ({
+const register = ({
   username,
   email,
   password,
@@ -36,3 +41,7 @@ export const register = ({
     middle_name,
     last_name
   });
+
+module.exports = {
+  register, login
+}

@@ -21,7 +21,7 @@ const makeTextWithErr = Component => props => (
 
       return (
         <div>
-            {error ? <Message message={error} /> : null}
+          {error ? <Message message={error} /> : null}
           <Component
             {...rest}
             value={value || ""}

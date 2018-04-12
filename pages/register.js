@@ -18,7 +18,7 @@ import {
 } from "../components/ui";
 import { Form, Text, TextArea, Field } from "react-form";
 import styled from "styled-components";
-import api from "../lib/api";
+import { register } from "../lib/api";
 import { InputWithErr } from "../components/inputs";
 
 const ButtonGroup = styled.div`
@@ -119,19 +119,42 @@ const RegisterPage = ({ onSubmit }) => (
   </ThemeProvider>
 );
 
+const STATUS = {
+  SUCCESS: "SUCCESS",
+  ERROR: "ERROR",
+  EMPTY: "EMPTY", 
+};
+
 export default class Register extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      status: STATUS.EMPTY
+    };
+
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
   onSubmit({ email, password, first_name, middle_name = "", last_name }) {
-    api.register({
+    register({
       email,
       password,
       username: email,
       first_name,
       middle_name,
       last_name
+    }).then(response => {
+      console.log(response);
+      this.setState({status: STATUS.SUCCESS});
+    }).catch(err => {
+      console.error(err);
+      this.setState({status: STATUS.ERROR});
     });
   }
 
   render() {
-    return <RegisterPage onSubmit={this.onSubmit} />;
+    return <RegisterPage onSubmit={this.onSubmit} status={this.state.status} />;
   }
 }
